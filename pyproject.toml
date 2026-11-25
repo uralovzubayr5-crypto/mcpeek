@@ -1,0 +1,26 @@
+[project]
+name = "mcpeek"
+version = "0.1.0"
+description = "Audit the tool surface of a Model Context Protocol server"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Zubayr Uralov", url = "https://github.com/uralovzubayr5-crypto" }]
+keywords = ["mcp", "model-context-protocol", "security", "ai", "audit"]
+
+[project.optional-dependencies]
+live = ["mcp>=1.0"]
+
+[project.scripts]
+mcpeek = "mcpeek.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["mcpeek"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
